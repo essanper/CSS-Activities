@@ -1,0 +1,59 @@
+main  {
+	display: grid;
+	font-family: 'Patrick Hand', cursive;
+	height: 100vh;
+	grid-gap: 10px;
+
+	/* especificar posiciones de las áreas creadas */
+		grid-template-areas: 
+			"arriba"
+			"izquierda"
+			"centro"
+			"derecha"
+			"abajo";
+}
+
+main > * {
+	background-color: goldenrod;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* contenido Responsive */
+@media (min-width: 600px) {
+	main {
+		grid-template-areas: 
+			"arriba arriba arriba"
+			"izquierda centro derecha"
+			"abajo abajo abajo";
+/*		grid-template-columns: 150px 200px 150px;
+		grid-template-rows: 150px 150px 150px;*/
+	}
+}
+
+/* crear áreas con sus respectivos nombre de referencia */
+	header {
+		grid-area: arriba;
+		background-color: goldenrod;
+	}
+
+	aside:first-of-type {
+		grid-area: izquierda;
+		background-color: orange;
+	}
+
+	article {
+		grid-area: centro;
+		background-color: purple; 
+	}
+
+	aside:last-of-type {
+		grid-area: derecha;
+		background-color: red;
+	}
+
+	footer {
+		grid-area: abajo;
+		background-color: green;
+	}
